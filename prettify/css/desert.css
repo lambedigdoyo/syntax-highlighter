@@ -8,6 +8,7 @@ pre.prettyprint {
 }
 pre.prettyprint ol.linenums{ 
   float: left; 
+  min-width: 100%;
 }
 pre .nocode { background-color: none; color: #000 }
 pre .str { color: #ffa0a0 } /* string  - pink */
