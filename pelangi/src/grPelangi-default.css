@@ -10,7 +10,6 @@ pre.grpelangi {
   width: 100%;   
   height: auto; 
   max-height: 80%; 
-  background: #202020;
   white-space: pre-wrap; 
   word-wrap: break-word;
 }
@@ -42,7 +41,6 @@ pre.grpelangi {
 .atv { color: #060 }
 }
 /* Put a border around prettyprinted code snippets. */
-pre.prettyprint { padding: 2px; border: 1px solid #888 }
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
 pre.grpelangi ol.linenums{ 
