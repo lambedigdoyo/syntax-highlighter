@@ -4,7 +4,7 @@ pre.grpelangi {
   display: block;
   font: normal 14px Monospace;
   margin: 10px auto; 
-  padding: 15px 8px;
+  padding: 4px;
   overflow: auto; 
   border: 1px solid orange;
   width: 100%;   
@@ -46,6 +46,11 @@ ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
 pre.grpelangi ol.linenums{ 
   float: left; 
   min-width: 100%;
+  box-shadow: 0 0 5px #aaa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 0 4px #555;
+  background-color: #e3e5e5;
 }
 li.L0,
 li.L1,
