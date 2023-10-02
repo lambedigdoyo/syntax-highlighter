@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>grPelangi Syntax/Code Highlighter (Theme-Doxy)</title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+<script src=src/grPelangi.js></script>
+<link rel=stylesheet href=src/grPelangi-doxy.css />
+ 
+<style>
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #555;
+}
+body {
+  height: 100vh;
+  padding: 0 16%;
+  overflow: hidden;
+}
+.container {
+  width: 68vw;
+  height: 100%;
+  overflow: auto;
+  background-color: #eee;
+  padding: 10px;
+  margin: 0;
+  border: 5px double #000;
+}
+pre.grpelangi { 
+  display: block;
+  font: normal 14px Monospace;
+  margin: 10px auto; 
+  padding: 15px 8px;
+  overflow: auto; 
+  border: 1px solid orange;
+  width: 100%;   
+  height: auto; 
+  max-height: 80%; 
+  white-space: pre-wrap; 
+  word-wrap: break-word;
+}  
+</style>
+  
+</head>
+<body>
+
+<div class='container'>
+
+  <h1 align=center>grPelangi Syntax/Code Highlighter (Theme: Doxy) Demo</h1>
+
+<pre class='grpelangi linenums'>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;grPelangi Syntax/Code Highlighter&lt;/title&gt;
+  &lt;meta charset='utf-8'&gt;
+  <&lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
+
+&lt;script src=src/grPelangi.js&gt;&lt;/script&gt;
+&lt;link rel=stylesheet href=src/grDesert.css /&gt;
+  
+&lt;style&gt;
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vh;
+  background-color: #555;
+}
+body {
+  padding: 0 100px;
+  overflow: hidden;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #eee;
+  padding: 10px;
+  margin: 0;
+  border: 5px double #000;
+}
+&lt;/style&gt;
+  
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;div class="container"&gt;
+    &lt;h1&gt;grPelangi Syntax/Code Highlighter (theme: default)&lt;/h1&gt;
+    &lt;h2&gt;Doa & Harapan seorang Ayah untuk Anak-anaknya&lt;/h2&gt;
+      &lt;p&gt;Tengah malam menjelang pagi masih melek jaga warung mencoba mengais rejeki. 
+    Demi anakku Akhsa & Jojo, warung aku buka selama 24 jam. Pagi istriku yang jaga, sementara malam hingga pagi, gantian aku yang melek jaga. 
+    Kerja keras demi masa depan anak, "adalah satu prinsip yg tak kan lekang dari gumpalan otakkku". Mereka haarus punya kehidupan yang jauh lebih baik.
+    Kehidupan yang penuh kebahagiaan dan kesejahteraan mutlak harus menjadi masa depan bagi ke-2 anakku. Biarlah kehidupan yg berat & penuh kekurangan ini hanya menjadi milik kami berdua sebagai orang tua.&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p&gt;Satu bagian kecil sudah terlewati setelah melalui hunjaman rintangan yang melelahkan jiwa. "Putri kecilku" kini telah lulus kuliah & mulai bekerja.
+    Rasa syukur yang tiada tara karena sebagian dari harapan besar itu "sekalipun perlahan tetapi Tuhan sudah kabulkan". Harapan dan doaku semoga anakku Akhsa akan menjemput kehidupan yang jauh lebih baik kedepannya.
+    "Tuhan lindungi Dia. Berikan segala limpahan berkatMU kepadanya. Aku ingin melihatnya bahagia. Ya..., kebahagiaan dia adalah juga kebahagiaan cucuku, Bram...".&lt;/p&gt;
+    &lt;br&gt;
+    &lt;p&gt;Anakku yang ke-2, Jojo, dia baru masuk SMP (kelas-7). Dia lahir selisih 11 thn dengan kakaknya. Dia adalah "anak pulung", bagiku. 
+    Ya..., karena setelah berharap selama bertahun2 hingga kmd harapan seakan sirna, eee..., tiba-tiba saja Tuhan percayakan dia lahir untukku. 11 tahun menanti itu sungguh luar biasa.
+    Hari ini dan selanjutnya, segala cucuran keringatku adalah untuk masa depannya. Dia harus sukses menjemput masa depan yang cerah. Dia harus "jadi orang". Dia tidak boleh mewarisi derita kehidupanku.
+    Doaku selalu kupanjatkan untuk dia. Tentu saja juga untuk kakaknya. "Tuhan..., aku memohon kepadaMU, kabulkanlah harapan dan doaku".&lt;/p&gt;
+    
+&lt;script&gt;
+/* 2023, September */
+var inputURL = document.getElementById('inputURL');
+var urlPrev1 = document.getElementById('urlPrev1');
+var URL = window.URL || window.webkitURL || window;
+
+function toDataUrl() {
+  var url = inputURL.value;
+  var xhr = new XMLHttpRequest();
+  xhr.onload = async () => {
+    var file = await (await fetch(url)).blob();
+    var _URL = URL.createObjectURL(file);
+    urlPrev1.src = _URL;
+    var rdr = new FileReader();
+    var img = new Image();
+    img.onload = () => {
+
+      rdr.onloadend = function () {
+        var myBase64 = rdr.result;
+        document.getElementById('code1').value = myBase64;
+        document.getElementById('base64').src = myBase64;
+      }
+      rdr.readAsDataURL(file); //(xhr.response); 
+    }
+    img.src = url;
+  };
+  xhr.open('GET', url);
+  xhr.responseType = 'blob';
+  xhr.send();
+}
+inputURL.oninput = toDataUrl;
+toDataUrl(); 
+/* 2023, September - Lambedigdoyo */
+&lt;/script&gt;
+  
+&lt;script&gt;
+  grPelangi();
+&lt;/script&gt;
+  
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+</div>
+
+<script>
+grPelangi(); 
+</script>
+  
+</body>
+</html>
