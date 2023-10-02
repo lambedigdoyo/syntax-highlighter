@@ -1,0 +1,57 @@
+/* Pretty printing styles. Used with prettify.js. */
+/* SPAN elements with the classes below are added by prettyprint. */
+pre.grpelangi { 
+  display: block;
+  font: normal 14px Monospace;
+  margin: 10px auto; 
+  padding: 4px;
+  overflow: auto; 
+  width: 100%;   
+  height: auto; 
+  max-height: 80%; 
+  background-color: #666;
+  white-space: pre-wrap; 
+  word-wrap: break-word;
+}
+/* */
+
+.str { color: #fB932C; }
+.kwd { color: #ffC763; }
+.com { color: #88747B; }
+.typ { color: #E8B9E8; }
+.lit { color: #4CADEA; }
+.pun { color: #6FB873; }
+.pln { color: #AEDAB0; }
+.tag { color: #e0da4f; }
+.atn { color: #fd5d60; }
+.atv { color: #F7A0DC; }
+.dec { color: #94A9D5; }
+ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+pre.grpelangi ol.linenums{ 
+  float: left; 
+  min-width: 100%;
+  padding-top: 10px;
+  padding-bottom; 10px;
+  background-color: #000;
+}
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+  color: #666;
+  list-style-type: decimal; background: rgba(0,0,0,0.35);
+}
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+  background: rgba(50,50,50,0.3);
+}
+@media print { 
+  .str {  color: #060; }
+  .kwd { color: #006; font-weight: bold; }
+  .com { color: #600; font-style: italic; }
+  .typ { color: #404; font-weight: bold; }
+  .lit { color: #044; }
+  .pun { color: #440; }
+  .pln { color: #000; }
+  .tag { color: #006; font-weight: bold; }
+  .atn { color: #404; }
+  .atv { color: #060; }
+}
+
+/* Specify class=linenums on a pre to get line numbering */
